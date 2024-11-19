@@ -16,8 +16,8 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bg_img, [0, 0])
+        x = tmr%800
+        screen.blit(bg_img, [-x, 0]) #右から左に動く
         screen.blit(pg3, [300, 200]) #こうかとん貼り付け
         pg.display.update()
         tmr += 1        
