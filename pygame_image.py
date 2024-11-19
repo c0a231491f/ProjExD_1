@@ -21,7 +21,7 @@ def main():
         screen.blit(pg3, [300, 200]) #こうかとん貼り付け
         pg.display.update()
         tmr += 1        
-        clock.tick(10)
+        clock.tick(200) #FPS200
 
 
 if __name__ == "__main__":
