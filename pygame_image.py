@@ -27,18 +27,21 @@ def main():
         screen.blit(bg_img_g, [x+4800, 0])
 
         key_lst =pg.key.get_pressed() #矢印キーを押した状態での移動
+        move_x = 0
+        move_y = 0
         if key_lst[pg.K_UP]:
-            kpg3_rect.move_ip((0, -1)) #上
+            move_y = -1 #上
         elif key_lst[pg.K_DOWN]:
-            kpg3_rect.move_ip((0, 1)) #下
+            move_y = 1 #下
         elif key_lst[pg.K_LEFT]:
-            kpg3_rect.move_ip((-1, 0)) #左
+            move_x = -1 #左
         elif key_lst[pg.K_RIGHT]:
-            kpg3_rect.move_ip((1, 0)) #右
+            move_x = 1 #右
         else:
-            kpg3_rect.move_ip((-1, 0))
+            move_x = -1
         
         screen.blit(kpg3, kpg3_rect) #こうかとん貼り付け
+        kpg3_rect.move_ip(move_x, move_y)
 
         pg.display.update()
         tmr += 1        
