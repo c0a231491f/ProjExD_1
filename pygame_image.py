@@ -29,12 +29,15 @@ def main():
         key_lst =pg.key.get_pressed() #矢印キーを押した状態での移動
         if key_lst[pg.K_UP]:
             kpg3_rect.move_ip((0, -1)) #上
-        if key_lst[pg.K_DOWN]:
+        elif key_lst[pg.K_DOWN]:
             kpg3_rect.move_ip((0, 1)) #下
-        if key_lst[pg.K_LEFT]:
+        elif key_lst[pg.K_LEFT]:
             kpg3_rect.move_ip((-1, 0)) #左
-        if key_lst[pg.K_RIGHT]:
+        elif key_lst[pg.K_RIGHT]:
             kpg3_rect.move_ip((1, 0)) #右
+        else:
+            kpg3_rect.move_ip((-1, 0))
+        
         screen.blit(kpg3, kpg3_rect) #こうかとん貼り付け
 
         pg.display.update()
