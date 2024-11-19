@@ -34,7 +34,7 @@ def main():
         elif key_lst[pg.K_DOWN]:
             move_y = 1 #下
         elif key_lst[pg.K_LEFT]:
-            move_x = -1 #左
+            move_x = -2 #左
         elif key_lst[pg.K_RIGHT]:
             move_x = 1 #右
         else:
