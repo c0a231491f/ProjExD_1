@@ -26,7 +26,17 @@ def main():
         screen.blit(bg_img, [x+3200, 0]) 
         screen.blit(bg_img_g, [x+4800, 0])
 
+        key_lst =pg.key.get_pressed()
+        if key_lst[pg.K_UP]:
+            kpg3_rect.move_ip((0, -1))
+        if key_lst[pg.K_DOWN]:
+            kpg3_rect.move_ip((0, 1))
+        if key_lst[pg.K_LEFT]:
+            kpg3_rect.move_ip((-1, 0))
+        if key_lst[pg.K_RIGHT]:
+            kpg3_rect.move_ip((1, 0))
         screen.blit(kpg3, kpg3_rect) #こうかとん貼り付け
+
         pg.display.update()
         tmr += 1        
         clock.tick(200) #FPS200
